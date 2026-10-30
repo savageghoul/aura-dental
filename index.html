@@ -439,20 +439,22 @@
 
             <form action="https://api.web3forms.com/submit" method="POST" id="bookingForm" onsubmit="handleFormSubmit(event)">
                 <input type="hidden" name="access_key" value="ffc02bfb-552c-455c-b2fb-de500ededdc3">
-                <input type="hidden" name="subject" value="✨ Новое бронирование приемного слота AURA DENTAL">
+                <input type="hidden" name="subject" value="Aura Dental - Новая заявка с сайта">
                 <input type="hidden" name="to" value="gecka2007@gmail.com">
+                <!-- Принудительное указание кодировки для писем -->
+                <input type="hidden" name="_charset" value="UTF-8">
 
                 <div class="mb-4">
                     <label class="text-xs font-medium text-slate-300 mb-1 block">Имя Клиента</label>
-                    <input type="text" name="Имя_Клиента" required placeholder="Иван Иванов" class="w-full glass-panel px-4 py-3 rounded-xl text-white text-sm focus:outline-none focus:border-cyan-400">
+                    <input type="text" name="Client Name" required placeholder="Иван Иванов" class="w-full glass-panel px-4 py-3 rounded-xl text-white text-sm focus:outline-none focus:border-cyan-400">
                 </div>
                 <div class="mb-4">
                     <label class="text-xs font-medium text-slate-300 mb-1 block">Контактный Телефон</label>
-                    <input type="tel" name="Телефон" required placeholder="+7 (999) 000-00-00" class="w-full glass-panel px-4 py-3 rounded-xl text-white text-sm focus:outline-none focus:border-cyan-400">
+                    <input type="tel" name="Phone" required placeholder="+7 (999) 000-00-00" class="w-full glass-panel px-4 py-3 rounded-xl text-white text-sm focus:outline-none focus:border-cyan-400">
                 </div>
                 <div class="mb-6">
                     <label class="text-xs font-medium text-slate-300 mb-1 block">Выбранная Услуга / Смета</label>
-                    <input type="text" name="Выбранная_Услуга" id="modalServiceInput" placeholder="Первичная консультация" class="w-full glass-panel px-4 py-3 rounded-xl text-white text-sm focus:outline-none focus:border-cyan-400">
+                    <input type="text" name="Service / Details" id="modalServiceInput" placeholder="Первичная консультация" class="w-full glass-panel px-4 py-3 rounded-xl text-white text-sm focus:outline-none focus:border-cyan-400">
                 </div>
                 <button type="submit" id="submitBtn" class="w-full bg-gradient-accent text-slate-950 font-bold py-3.5 rounded-xl text-sm hover:opacity-90 transition-all shadow-lg shadow-cyan-500/20">
                     Подтвердить Запись
@@ -531,24 +533,24 @@
             setTimeout(() => modal.classList.add('hidden'), 300);
         }
 
-        // Show Custom Toast Notification instead of Browser Alert
+        // Show Custom Toast Notification
         function showToast() {
             const toast = document.getElementById('toast');
             toast.classList.add('show');
             setTimeout(() => {
                 toast.classList.remove('show');
-            }, 4000); // Скрывается через 4 секунды
+            }, 4000);
         }
 
-        // Form Submit Handler (Web3Forms + Telegram Direct Push)
+        // Form Submit Handler
         async function handleFormSubmit(e) {
             e.preventDefault();
             const form = document.getElementById('bookingForm');
             const btn = document.getElementById('submitBtn');
             
-            const name = form.querySelector('[name="Имя_Клиента"]').value;
-            const phone = form.querySelector('[name="Телефон"]').value;
-            const service = form.querySelector('[name="Выбранная_Услуга"]').value || 'Первичная консультация';
+            const name = form.querySelector('[name="Client Name"]').value;
+            const phone = form.querySelector('[name="Phone"]').value;
+            const service = form.querySelector('[name="Service / Details"]').value || 'Первичная консультация';
 
             btn.innerText = 'Отправка...';
 
@@ -567,7 +569,7 @@
             `.trim();
 
             try {
-                // 1. Отправка на Email
+                // 1. Отправка на Email (через Web3Forms с латинскими именами полей)
                 const formData = new FormData(form);
                 await fetch("https://api.web3forms.com/submit", { 
                     method: "POST", 
@@ -585,11 +587,10 @@
                     })
                 });
 
-                // Красивый салют из конфетти
                 confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
                 
                 closeBookingModal();
-                showToast(); // Вызов нашего стильного уведомления
+                showToast();
                 form.reset();
             } catch (error) {
                 alert('Произошла ошибка отправки. Пожалуйста, попробуйте снова.');
