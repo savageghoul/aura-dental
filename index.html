@@ -6,24 +6,15 @@
     <title>AURA DENTAL | Клиника Инновационной Стоматологии</title>
     <meta name="description" content="Премиальная цифровая стоматология. Имплантация, виниры E-Max, элайнеры, лечение под микроскопом и отбеливание Zoom 4 в центре города.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://auradental.github.io/">
+    <link rel="canonical" href="https://savageghoul.github.io/aura-dental/">
     
     <!-- Open Graph / Facebook / Telegram -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://auradental.github.io/">
+    <meta property="og:url" content="https://savageghoul.github.io/aura-dental/">
     <meta property="og:title" content="AURA DENTAL | Инновационная стоматология">
     <meta property="og:description" content="Ультрасовременная стоматология с AI-диагностикой, 3D-моделированием и гарантией на процедуры.">
-    <meta property="og:image" content="https://auradental.github.io/assets/og-image.jpg">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://auradental.github.io/">
-    <meta property="twitter:title" content="AURA DENTAL | Инновационная стоматология">
-    <meta property="twitter:description" content="Ультрасовременная стоматология с AI-диагностикой, 3D-моделированием и гарантией на процедуры.">
-
-    <!-- Security Header simulation via HTML Meta -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net data: blob:;">
-
+    <!-- Tailwind CSS & Icons -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -35,47 +26,16 @@
       "@context": "https://schema.org",
       "@type": "Dentist",
       "name": "AURA DENTAL CLINIC",
-      "image": "https://auradental.github.io/assets/og-image.jpg",
-      "@id": "https://auradental.github.io/",
-      "url": "https://auradental.github.io/",
+      "url": "https://savageghoul.github.io/aura-dental/",
       "telephone": "+78005553535",
-      "priceRange": "$$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Невский проспект, 100",
-        "addressLocality": "Санкт-Петербург",
-        "postalCode": "190000",
-        "addressCountry": "RU"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 59.934280,
-        "longitude": 30.335098
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "09:00",
-        "closes": "21:00"
-      }
+      "priceRange": "$$$"
     }
     </script>
 
     <style>
         :root {
             --bg-dark: #050811;
-            --accent-cyan: #00f2fe;
-            --accent-blue: #4facfe;
-            --accent-purple: #7f00ff;
-            --glass-bg: rgba(15, 23, 42, 0.65);
+            --glass-bg: rgba(15, 23, 42, 0.75);
             --glass-border: rgba(255, 255, 255, 0.12);
         }
 
@@ -103,7 +63,7 @@
         }
 
         .glass-panel-hover:hover {
-            border-color: rgba(0, 242, 254, 0.4);
+            border-color: rgba(0, 242, 254, 0.5);
             box-shadow: 0 10px 30px -10px rgba(0, 242, 254, 0.3);
             transform: translateY(-5px);
         }
@@ -133,21 +93,7 @@
             background: #00f2fe;
         }
 
-        /* Interactive Tooth Formula */
-        .tooth-item {
-            transition: all 0.2s ease;
-            cursor: pointer;
-        }
-        .tooth-item:hover {
-            fill: #00f2fe;
-            filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.8));
-        }
-        .tooth-item.selected {
-            fill: #7f00ff;
-            filter: drop-shadow(0 0 10px rgba(127, 0, 255, 0.9));
-        }
-
-        /* Custom Slider Styling */
+        /* Custom Range Slider */
         input[type=range] {
             -webkit-appearance: none;
             background: transparent;
@@ -191,7 +137,6 @@
                     <a href="#services" class="hover:text-cyan-400 transition-colors">Услуги</a>
                     <a href="#interactive" class="hover:text-cyan-400 transition-colors">Интерактив</a>
                     <a href="#doctors" class="hover:text-cyan-400 transition-colors">Врачи</a>
-                    <a href="#faq" class="hover:text-cyan-400 transition-colors">FAQ</a>
                 </nav>
 
                 <div class="flex items-center gap-4">
@@ -232,7 +177,7 @@
                     </div>
                 </div>
 
-                <!-- Interactive Hero Teeth Model -->
+                <!-- Interactive Card -->
                 <div class="relative flex justify-center">
                     <div class="w-80 h-80 sm:w-96 sm:h-96 glass-panel rounded-3xl p-8 relative flex flex-col items-center justify-center border-cyan-500/30">
                         <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 to-purple-500/10 rounded-3xl -z-10"></div>
@@ -245,7 +190,7 @@
         </div>
     </section>
 
-    <!-- Services Grid -->
+    <!-- Services Section -->
     <section id="services" class="py-20 z-10 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -373,7 +318,7 @@
                 </div>
                 <span class="font-space font-bold text-lg text-white">AURA DENTAL</span>
             </div>
-            <p class="text-xs text-slate-500">© 2026 AURA DENTAL CLINIC. Все права защищены. Лицензия № ЛО-78-01-011234</p>
+            <p class="text-xs text-slate-500">© 2026 AURA DENTAL CLINIC. Все права защищены.</p>
         </div>
     </footer>
 
@@ -384,7 +329,7 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <h3 class="text-2xl font-bold text-white mb-2">Онлайн Запись</h3>
-            <p class="text-xs text-slate-400 mb-6">Оставьте заявку, и администратор свяжется с вами в течение 5 минут.</p>
+            <p class="text-xs text-slate-400 mb-6">Оставьте заявку, и мы перезвоним вам в течение 5 минут.</p>
 
             <form id="bookingForm" onsubmit="handleBookingSubmit(event)">
                 <div class="mb-4">
@@ -406,9 +351,8 @@
         </div>
     </div>
 
-    <!-- JavaScript Interactions -->
+    <!-- Scripts -->
     <script>
-        // Interactive Tooth Shade Function
         function updateShade(val) {
             const tooth = document.getElementById('interactiveTooth');
             const container = document.getElementById('toothContainer');
@@ -429,7 +373,6 @@
             }
         }
 
-        // Modal Controls
         function openBookingModal(serviceName = '') {
             const modal = document.getElementById('bookingModal');
             if (serviceName) {
@@ -447,16 +390,11 @@
 
         function handleBookingSubmit(e) {
             e.preventDefault();
-            confetti({
-                particleCount: 100,
-                spread: 70,
-                origin: { y: 0.6 }
-            });
-            alert('Спасибо! Ваша заявка успешно отправлена. Мы перезвоним вам в течение 5 минут.');
+            confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+            alert('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами.');
             closeBookingModal();
         }
 
-        // Canvas Particles Background
         const canvas = document.getElementById('bg-canvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
